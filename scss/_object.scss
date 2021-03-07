@@ -1,48 +1,85 @@
 // グローバルナビ
 .o-global-nav {
-    height: 100%;
-    display: flex;
-    align-items: center;
+    z-index: 2;
+    position: fixed;
+    right: 0;
+    top: $header-height;
+    height: calc(100vh - #{$header-height});
 
-    ul {
-        height: 100%;
-        display: flex;
-        justify-content: end;
+    &.open {
+        ul {
+            transform: translateX(0);
+        }
     }
 
-    li {
-        display: flex;
+    ul {
+        position: relative;
+        transform: translateX(100%);
+        background: rgba(#fff, .3 );
+        padding: 20px 30px;
+        transition: .3s;
+        height: 100%;
     }
 
     a {
-        align-items: center;
-        height: 100%;
-        display: flex;
         text-decoration: none;
         color: $font-color;
-        padding: 0 20px;
-        position: relative;
-        letter-spacing: .1em;
+        height: 30px;
+        margin-bottom: 10px;
+        display: flex;
+    }
 
-        &::after {
-            content: '';
-            display: block;
-            height: 2px;
-            width: 100%;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            background: #1cb335;
-            transform: scale(0, 1);
-            transition: .3s;
+    //PCの設定はすべてここへ
+    @include mq($breakpoint: md) {
+        background: none;
+        position: inherit;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        ul {
+            height: 100%;
+            display: flex;
+            justify-content: end;
+            background: none;
+            padding: 0;
+            transform: translateX(0);
         }
 
-        &:hover {
+        li {
+            display: flex;
+        }
+
+        a {
+            align-items: center;
+            height: 100%;
+            display: flex;
+            margin-bottom: 0;
+
+            padding: 0 20px;
+            position: relative;
+            letter-spacing: .1em;
+
             &::after {
-                transform: scale(.5, 1);
+                content: '';
+                display: block;
+                height: 2px;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background: #1cb335;
+                transform: scale(0, 1);
+                transition: .3s;
+            }
+
+            &:hover {
+                &::after {
+                    transform: scale(.5, 1);
+                }
             }
         }
-    }
+    }//Media Query
 }
 
 //ナビボタン
