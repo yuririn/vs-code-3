@@ -1,0 +1,25 @@
+// リセットCSS
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+// 変数
+$font-color:#333;
+$font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+$header-height: 80px;//ヘッダーの高さ
+
+// ベースの設定
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: $font-color;
+    font-family: $font-family;
+    line-height: 1.8;
+    font-size: 1.6rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
