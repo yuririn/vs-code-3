@@ -44,3 +44,14 @@
         }
     }
 }
+
+//キービジュアル
+.o-key-visual {
+    height: calc(100vh - $header-height);
+    display: block;
+
+    img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
