@@ -45,6 +45,56 @@
     }
 }
 
+//ナビボタン
+.o-global-nav-btn {
+    border: none;
+    position: fixed;
+    top: 30px;
+    right: 15px;
+    width: 30px;
+    height: 26px;
+    background: none;
+
+    //ボタン
+    &::after,
+    &::before {
+        position: absolute;
+        background: #1cb335;
+        content: '';
+        height: 2px;
+        width: 100%;
+        left: 0;
+        display: block;
+        transition: transform .3s;
+    }
+
+    &::before {
+        top: 0;
+        box-shadow: 0 12px 0  #1cb335;
+    }
+
+    &::after {
+        top: 24px;
+    }
+
+    //開閉時のアニメーション
+    &.open {
+        &::before {
+            top: 0;
+            box-shadow: none;
+            transform: rotate(45deg) translate(9px, 9px);
+        }
+        &::after {
+            top: 24px;
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+    }
+
+    @include mq($breakpoint: md) {
+        display: none;
+    }//Media Query
+}
+
 //キービジュアル
 .o-key-visual {
     height: calc(100vh - $header-height);
