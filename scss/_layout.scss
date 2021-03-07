@@ -1,0 +1,10 @@
+// headerのレイアウト
+.l-header {
+    max-width: 1020px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+    height: $header-height;
+}
