@@ -7,7 +7,7 @@
 ## リポジトリをクローン
 ソース管理からhttps://github.com/yuririn/vs-code-3.gitをクローンします。
 
-index.html、style.scss、script.jsのからのファイルがあるので、https://ginneko-atelier.com/blogs/entry440/を参考に進めていってください。
+index.html、style.scss、script.jsのからのファイルがあるので、[初心者コーダーに贈る！超軽量高機能エディターVS Code入門3](https://ginneko-atelier.com/blogs/entry440/)を参考に進めていってください。
 ```
 project/
   ├ index.html
